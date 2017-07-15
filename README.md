@@ -31,7 +31,7 @@ Below is the url  to the final video output
 https://youtu.be/Y06pXsYHKtg
 
 <a href="https://www.youtube.com/watch?v=Y06pXsYHKtg&feature=youtu.be
-" target="_blank"><img src="http://img.youtube.com/vi/Vx5GtROunzQ/0.jpg" 
+" target="_blank"><img src=" " 
 alt="YouTube" width="240" height="180" border="10" /></a>
 
 
