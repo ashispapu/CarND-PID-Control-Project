@@ -3,6 +3,38 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Introduction
+
+The objective of this project was to "build a PID controller and tune the P,I and D hyperparameters by applying the techniques as described in the lessons," and test the  solution on the simulator . The simulator provides cross-track error (CTE), speed, and steering angle data via local websocket. The PID (proportional/integral/differential) controller must respond with steering and throttle commands to drive the car  around the simulator track in a stable manner .
+
+## Reflection
+
+### Describe the effect each of the P, I, D components had in your implementation.
+
+The P component is the propotional controller. It changes steering angle in propotion to the crosstrack error (CTE). With just the P component, I observed that the car oscillated around the center of the track going left and right and eventually  off the track . This is expected since with just the P component, as shown in the lecture the car overshoots and undershoots
+
+The D component is the differential controller. It changes steering in proportion to the derivative of the crosstrack error. The D-component helps dampen the oscillations and with a P and D controller, the car is able to drive around the track though the driving pattern is not very smooth. I think this is also expected behavior because as shown in the lectures with and P and D controller a car is able to follow
+the track if there is no steering drift. It seems to drive in a wavy manner along the center of the road. While the driving is not dangerous, its no fun sitting in a car that drives like this 
+
+The I component is the integral controller. It changes steering in proportion to the sum of crosstrack errors. This term is needed to fix any bias in the steering and correct for drift. I added a small integral component. I don’t think there is any material bias in the steering, so I  didn’t have a big impact on the steering 
+
+
+### Describe how the final hyperparameters were chosen
+
+I chose the P, I and D components through manual tuning. I experimented with just a P controller but that caused the car to oscillate a lot. So I added a D component to dampen the oscillations. I found that the car was able to drive around the track for a lot of values of P and D. I added a small I component but it didn’t seem to have a material impact on driving around the simulator. Higher values of D component, dampened the oscillations more. I also increased the throttle and found that a slightly adjusting the P, I and D components ensured that the car was able to drive around the simulator.
+
+### Video
+
+Below is the url  to the final video output  
+
+### P5_project_video_final.mp4
+https://youtu.be/9golUDcCFx0
+
+<a href="https://www.youtube.com/watch?v=9golUDcCFx0&feature=youtu.be
+" target="_blank"><img src="http://img.youtube.com/vi/Vx5GtROunzQ/0.jpg" 
+alt="YouTube" width="240" height="180" border="10" /></a>
+
+
 ## Dependencies
 
 * cmake >= 3.5
