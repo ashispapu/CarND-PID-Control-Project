@@ -24,14 +24,14 @@ void PID::Init(double Kp, double Ki, double Kd) {
 
 void PID::UpdateError(double cte) {
 
-  //Proportional Error Calculation
-  p_error = cte;
-
   //Integral Error Calculation
   i_error += cte;
 
   //Derivative Error Calculation
   d_error = cte - p_error;
+
+  //Proportional Error Calculation
+  p_error = cte;
 
   //Print out to terminal window
   std::cout << "P: " << p_error << " | " << "I: " << i_error << " | " << "D: " << d_error << std::endl;
