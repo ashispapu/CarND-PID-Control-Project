@@ -34,6 +34,7 @@ int main()
 
   PID pid;
   // TODO: Initialize the pid variable.
+  //  P, I and D component were chosen through manual tuning
   pid.Init(0.75, 0.0008, 30.0);
 
 
@@ -66,10 +67,10 @@ int main()
 
           // Function to sum all errors multiplied by respective K values
           steer_value = pid.TotalError();
-          
+
 
           // DEBUG
-          std::cout << "CTE: " << cte << " Steering Value: " << steer_value << std::endl;
+          std::cout << "CTE: " << cte << " Steering Value: " << steer_value <<  " Speed : " << speed  <<std::endl;
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
